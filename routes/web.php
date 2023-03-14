@@ -18,21 +18,9 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
-    //using array_map 
-    // $posts= array_map(function(File::files(resource_path("posts"))){
-    //     $document= YamlFrontMatter::parseFile($file);
-    //     return new Post(
-    //         $document->title,
-    //         $document->date,
-    //         $document->body(),
-    //         $document->slug);
-    // },$files);
-    
-    //using collections 
-
     
     return view('posts', [
-        'posts' => Post::all()
+        'posts' => Post::with('category')->get() //eager loading 
     ]);
 });
 
