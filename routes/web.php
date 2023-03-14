@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
@@ -35,12 +36,15 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', function (Post $post) {
-    //Find a post by its id and pass it to a view called "post"
+Route::get('posts/{post:slug}', function (Post $post) {
+    //Find a post by its slug
     return view('post', [
         'post' =>$post
     ]);
 });
 
-//above we can use constraints in odrder not to use like this link 'localhost/posts/fdsfè-"_é_çé' 
-//there is much constraints like if you are working with ids we can use only 0-9 or whereNumber('post)...
+Route::get('category/{category}',function(Category $category){
+    return view('posts', [
+        'posts' => $category->posts
+    ]);
+});
