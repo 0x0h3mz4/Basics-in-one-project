@@ -1,4 +1,9 @@
 <x-layout>
+    <div>
+        <form method="GET" action="#">
+            <input type="text" name="search" placeholder="Search..">
+        </form>
+    </div>
     @foreach ($posts as $post)
     {{-- @dd($loop) --}}
         <article>
