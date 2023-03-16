@@ -1,6 +1,6 @@
 # Laravel Simple Blog
 
-This is a simple blog built using Laravel framework for learning purposes. It includes modules, database migrations, factories, controllers, and seeds.
+This is a simple blog built using Laravel framework for learning purposes. It includes blades, controllers, middlewares, authorization, modules, database migrations, Eloquent queries, factories and seeds.
 
 ## Requirements
 
