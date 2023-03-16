@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\File;
 Route::get('/', function () {
     
     return view('posts', [
-        'posts' => Post::with('category')->get() //eager loading 
+        'posts' => Post::latest()->with('category')->get() //eager loading 
     ]);
 });
 
